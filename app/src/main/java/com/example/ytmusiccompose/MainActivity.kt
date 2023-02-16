@@ -1,5 +1,6 @@
 package com.example.ytmusiccompose
 
+import android.net.Uri
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -22,6 +23,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import com.example.ytmusiccompose.ui.theme.YtmusicComposeTheme
+import java.net.URL
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,7 +51,7 @@ fun app(){
             modifier = Modifier
                 .fillMaxSize()
                 .zIndex(2f),
-            color = Color.Transparent
+            color = MaterialTheme.colorScheme.primary
         ) {
             Column() {
                 //topbar
@@ -58,6 +60,7 @@ fun app(){
                             .wrapContentHeight()
                     ) {
                             tbar.topbar()
+
                     }
                 //content
                     Column(
@@ -74,6 +77,7 @@ fun app(){
                             .wrapContentHeight()
                     ) {
                         scr1.Greeting(name ="Daniel")
+
                     }
 
             }

@@ -44,7 +44,7 @@ class Topbar {
                 Image(
                     alignment = Alignment.Center,
                     contentScale = ContentScale.FillBounds,
-                    painter = painterResource(id = R.drawable.icon),
+                    painter = painterResource(id = R.drawable.group_8),
                     contentDescription = stringResource(id = R.string.rectangle_13),
                     modifier = Modifier
                         .zIndex(1f)

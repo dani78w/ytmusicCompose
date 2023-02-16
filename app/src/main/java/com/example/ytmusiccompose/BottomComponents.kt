@@ -76,11 +76,12 @@ class BottomComponents {
                         modifier = androidx.compose.ui.Modifier
                             .fillMaxWidth()
                             .height(76.dp)
+                            .background(color = androidx.compose.material3.MaterialTheme.colorScheme.surface)
                     ) {
-                        NavigationBar(
+                        NavigationBar(containerColor = Color.Transparent,
                             modifier = androidx.compose.ui.Modifier
                                 .fillMaxWidth()
-                                .background(color = androidx.compose.ui.graphics.Color.Blue)
+
 
                         ) {
                             var selectedItem by remember { mutableStateOf(0) }

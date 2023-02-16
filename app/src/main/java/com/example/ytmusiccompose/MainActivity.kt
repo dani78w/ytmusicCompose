@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 
 import androidx.compose.material3.MaterialTheme
@@ -27,43 +28,60 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             YtmusicComposeTheme {
-                var scr1 = BottomComponents()
-                var wll = Wallpaper()
-                // A surface container using the 'background' color from the theme
-                Box(){
-                    Surface(
-                        modifier = Modifier.fillMaxSize().zIndex(2f),
-                        color = Color.Transparent
-                        ) {
-                        Column() {
-                            Row(
-                                modifier = Modifier
-                                    .weight(.9f)
-                            ) {
-
-                            }
-                            Row(
-                                modifier = Modifier
-                                    .weight(3f)
-                            ) {
-
-                            }
-                            Row(
-                                modifier = Modifier
-                                    .wrapContentHeight()
-                            ) {
-                                scr1.Greeting(name ="Daniel")
-                            }
-                        }
-
-                    }
-
-                    wll.Wallpaper()
-
+                    app()
                 }
 
-            }
+
         }
+    }
+}
+
+@Composable
+fun app(){
+    var scr1 = BottomComponents()
+    var wll = Wallpaper()
+    var tbar = Topbar()
+    var chps = Chips()
+    var cont = ContentMain()
+    // A surface container using the 'background' color from the theme
+    Box(){
+        Surface(
+            modifier = Modifier
+                .fillMaxSize()
+                .zIndex(2f),
+            color = Color.Transparent
+        ) {
+            Column() {
+                //topbar
+                    Row(
+                        modifier = Modifier
+                            .wrapContentHeight()
+                    ) {
+                            tbar.topbar()
+                    }
+                //content
+                    Column(
+                        modifier = Modifier
+                            .weight(3f)
+                    ) {
+                        chps.Chips()
+                        cont.content()
+                    }
+
+                //bottom_bar
+                    Row(
+                        modifier = Modifier
+                            .wrapContentHeight()
+                    ) {
+                        scr1.Greeting(name ="Daniel")
+                    }
+
+            }
+
+        }
+
+        wll.Wallpaper()
+
     }
 }
 
@@ -72,7 +90,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DefaultPreview() {
     YtmusicComposeTheme {
-        var screen1 = BottomComponents()
-        screen1.Greeting(name ="Daniel")
+        app()
     }
 }

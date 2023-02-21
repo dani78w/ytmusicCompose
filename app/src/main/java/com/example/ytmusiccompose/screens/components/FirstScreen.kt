@@ -7,6 +7,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
@@ -31,6 +32,7 @@ fun FirstScreen(navController: NavController){
                 .fillMaxSize()
                 .zIndex(2f),
             color = MaterialTheme.colorScheme.primary
+            //color = Color.Transparent
         ) {
             Column() {
                 //topbar
